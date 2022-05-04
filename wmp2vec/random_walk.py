@@ -44,7 +44,12 @@ def weighted_random_walk(graph: nx.Graph,
 
     node_walks = []
 
+    node_iter_num = 0
     while len(node_walks) < n_walks:
+
+      node_iter_num += 1
+      if node_iter_num > max_iters:
+        break
 
       walk = [start_node]
       current_node = start_node
@@ -53,7 +58,7 @@ def weighted_random_walk(graph: nx.Graph,
       while len(walk) < walk_length:
 
         iter_num += 1
-        if iter_num > max_iters:
+        if node_iter_num > max_iters:
           break
 
         neighbors = list(graph.neighbors(current_node))
@@ -69,33 +74,12 @@ def weighted_random_walk(graph: nx.Graph,
       if (metapaths is not None) and match_metapath(graph, walk, metapaths):
         node_walks.append(walk)
 
-    walks.append(node_walks)
+    walks.extend(node_walks)
+
+  # remove duplicate walks
+  walks = list(set(map(tuple, walks)))
 
   return walks
-
-
-# def weighted_random_walk_deprecated(graph,
-#                                     n: int = None,
-#                                     length: int = None,
-#                                     metapaths=None):
-
-  # _g = cg.csrgraph(graph)
-
-  # TODO assert length == len(metapaths[0]) == len(metapaths[1]) == ...
-  # TODO walks of length>len(metapaths[0]) are also valid if it uses the same methapath
-
-  # valid_walks = []
-  # while len(valid_walks) < n:
-  #   walks = _g.random_walks(length, n, start_nodes=None)
-  #   types = [[graph.nodes[node]['type'] for node in walk]
-  #            for walk in walks]
-  #   walks = [walks[i].tolist()
-  #            for i, t in enumerate(types)
-  #            if t in metapaths and len(set(walks[i])) == len(walks[i])  # no loop
-  #            ]
-  #   valid_walks.extend(walks)
-
-  # return valid_walks[:n]
 
 
 def nx_random_walk(graph, walk_length, epochs, start_nodes=None, max_iter=1000):
