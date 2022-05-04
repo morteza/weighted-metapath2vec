@@ -15,7 +15,10 @@ def weighted_random_walk(graph: nx.Graph,
   walks = []
   for start_node in start_nodes:
     assert start_node in graph.nodes
-    for _ in range(n_walks):
+
+    node_walks = []
+
+    while len(node_walks) < n_walks:
 
       walk = [start_node]
       current_node = start_node
@@ -37,7 +40,13 @@ def weighted_random_walk(graph: nx.Graph,
         current_node = np.random.choice(neighbors, p=weights)
         walk.append(current_node)
 
-      walks.append(walk)
+      node_types = [graph[node]['type'] for node in walk]
+      print(node_types, metapath)
+
+      if all(node_types == metapath):
+        node_walks.append(walk)
+
+    walks.append(node_walks)
 
   return walks
 
