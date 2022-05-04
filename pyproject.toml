@@ -1,17 +1,24 @@
 [tool.poetry]
 name = "wmp2vec"
-version = "0.1.0"
-description = ""
+version = "0.1.2"
+description = "Embed heterogenous graphs using a weighted alternative of the metapath2vec"
 authors = ["Morteza Ansarinia <ansarinia@me.com>"]
 license = "MIT"
 readme = "README.md"
+homepage = "https://github.com/morteza/wmp2vec"
+repository = "https://github.com/morteza/wmp2vec"
+keywords = ["machine learning", "graph embedding", "metapath2vec"]
+classifiers = [
+    "Operating System :: OS Independent",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
 
 [tool.poetry.dependencies]
 python = "3.9.*"
 flake8 = "^4.0.1"
 gensim = "^4.1.2"
 networkx = "^2.8"
-csrgraph = "^0.1.28"
+scikit-learn = "^1.0.2"
 
 [tool.poetry.dev-dependencies]
 pytest = "^5.2"

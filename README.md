@@ -1,6 +1,10 @@
 # Weighted Metapath2vec
 
-Python package for weighted metapath2vec embedding.
+Python package to embed heterogenous graphs using a weighted alternative of metapath2vec.
 
 
-https://colab.research.google.com/drive/1PVZgDbXzP8LliGnCkANQRCDmTgP_N6T4#scrollTo=3QWQH4Q1A2TU
+## Installation
+
+```
+pip install wmp2vec
+```
