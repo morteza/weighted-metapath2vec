@@ -1,5 +1,31 @@
 import numpy as np
 import networkx as nx
+import re
+
+
+def match_metapath(G, walk, metapaths: list[list[str]]):
+
+    node_types = [G.nodes.data('type')[node] for node in walk]
+
+    for metapath in metapaths:
+
+        metapath_encoding, encoded_metapath = np.unique(metapath, return_inverse=True)
+
+        # skip empty metapaths
+        if len(encoded_metapath) == 0:
+          continue
+
+        encoded_walk = ''.join([str(np.where(metapath_encoding == x)[0][0]) for x in node_types])
+
+        metapath_pattern = '(?=(' + ''.join([str(nt) for nt in encoded_metapath]) + '))'
+
+        n_matched = len(re.findall(metapath_pattern, encoded_walk))
+        n_expected = (len(encoded_walk) - 1) / (len(encoded_metapath) - 1)
+
+        if n_matched > 0 and n_matched == n_expected:
+            return True
+
+    return False
 
 
 def weighted_random_walk(graph: nx.Graph,
@@ -40,10 +66,7 @@ def weighted_random_walk(graph: nx.Graph,
         current_node = np.random.choice(neighbors, p=weights)
         walk.append(current_node)
 
-      node_types = [graph[node]['type'] for node in walk]
-      print(node_types, metapath)
-
-      if all(node_types == metapath):
+      if (metapaths is not None) and match_metapath(graph, walk, metapaths):
         node_walks.append(walk)
 
     walks.append(node_walks)
