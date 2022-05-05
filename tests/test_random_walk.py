@@ -1,6 +1,6 @@
 import numpy as np
 import networkx as nx
-from wmp2vec.random_walk import nx_random_walk, weighted_random_walk
+from wmetapath2vec.random_walk import nx_random_walk, weighted_random_walk
 
 
 def test_weighted_random_walk():

@@ -1,4 +1,4 @@
-from wmp2vec import __version__
+from wmetapath2vec import __version__
 
 
 def test_version():

@@ -1,11 +1,11 @@
-from wmp2vec.random_walk import weighted_random_walk
+from wmetapath2vec.random_walk import weighted_random_walk
 
 from sklearn.base import BaseEstimator, TransformerMixin
 
 from gensim.models import Word2Vec
 
 
-class WeightedMetapath2Vec(BaseEstimator, TransformerMixin):
+class WeightedMetapath2VecModel(BaseEstimator, TransformerMixin):
     def __init__(self,
                  graph,
                  metapaths,

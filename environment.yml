@@ -1,4 +1,4 @@
-name: wmp2vec
+name: wmetapath2vec
 
 channels:
   - conda-forge

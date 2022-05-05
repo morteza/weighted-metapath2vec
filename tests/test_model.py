@@ -1,10 +1,10 @@
 import numpy as np
 import networkx as nx
-from wmp2vec.random_walk import match_metapath
+
+from wmetapath2vec.model import WeightedMetapath2VecModel
 
 
-def test_match_metapath():
-
+def test_wmetapath2vec_model(embedding_dim=128):
     weights = np.random.rand(5, 5)
     np.fill_diagonal(weights, 0)
 
@@ -18,4 +18,7 @@ def test_match_metapath():
 
     metapaths = [['task', 'construct', 'task']]
 
-    assert match_metapath(G, [0, 2, 1, 4, 1], metapaths)
+    model = WeightedMetapath2Vec(G, metapaths, 3, 20, embedding_dim=embedding_dim)
+    embeddings = model.fit_transform()
+
+    assert embeddings.shape == (len(G.nodes.keys()), embedding_dim)
