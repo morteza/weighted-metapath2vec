@@ -18,7 +18,7 @@ def test_wmetapath2vec_model(embedding_dim=128):
 
     metapaths = [['task', 'construct', 'task']]
 
-    model = WeightedMetapath2Vec(G, metapaths, 3, 20, embedding_dim=embedding_dim)
+    model = WeightedMetapath2VecModel(G, metapaths, 3, 20, embedding_dim=embedding_dim)
     embeddings = model.fit_transform()
 
     assert embeddings.shape == (len(G.nodes.keys()), embedding_dim)

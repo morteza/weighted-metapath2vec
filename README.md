@@ -1,10 +1,33 @@
 # Weighted Metapath2vec
 
-wMetapath2vec is a Python package to embed heterogenous graph nodes using a weighted alternative of Metapath2vec. The embedding might be used for downstream machine learning tasks.
+wMetapath2vec is a Python package to embed heterogenous graph nodes using a weighted alternative of Metapath2vec method. The embedding can be used for downstream machine learning tasks.
 
 
 ## Installation
 
 ```
 pip install wmetapath2vec
+```
+
+## Usage
+
+```python
+from wmetapath2vec import WeightedMetapath2VecModel
+
+...  # Load a networkx graph as G
+
+metapaths = [
+    ['Article', 'Author', 'Article'],
+    ['Author', 'Article', 'Author']
+]
+
+model = WeightedMetapath2VecModel(G,
+                                  metapaths,
+                                  walk_length=3,
+                                  n_walks_per_node=20,
+                                  embedding_dim=128)
+
+node_embeddings = model.fit_transform()
+
+...  # downstream task
 ```
