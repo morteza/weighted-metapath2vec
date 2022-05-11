@@ -1,17 +1,12 @@
 repos:
--   repo: local
+-   repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v3.2.0
     hooks:
     - id: trailing-whitespace
-      name: trailing-whitespace
-      entry:
     - id: end-of-file-fixer
-      name: end-of-file-fixer
+    -   id: check-yaml
     - id: check-added-large-files
-      name: check-added-large-files
-    - id: poetry-check
-      name: poetry-check
-    - id: poetry-lock
-      name: poetry-lock
-    - id: poetry-export
-      name: poetry-export
-      args: ["-f", "requirements.txt", "-o", "requirements.txt"]
+    # - id: poetry-check
+    # - id: poetry-lock
+    # - id: poetry-export
+    #   args: ["-f", "requirements.txt", "-o", "requirements.txt"]
