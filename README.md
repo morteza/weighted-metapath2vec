@@ -2,6 +2,8 @@
 
 Weighted is a Python package to embed heterogenous graph nodes using a weighted alternative of Metapath2vec technique. The embedding can be used for downstream machine learning tasks.
 
+[![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white)](https://github.com/pre-commit/pre-commit)
+
 
 ## Installation
 
