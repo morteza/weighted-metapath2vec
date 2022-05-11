@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "wMetapath2Vec"
-version = "0.1.2"
+version = "1.0.3"
 description = "Embed heterogenous graphs using a weighted alternative of the metapath2vec"
 authors = ["Morteza Ansarinia <ansarinia@me.com>"]
 license = "MIT"
