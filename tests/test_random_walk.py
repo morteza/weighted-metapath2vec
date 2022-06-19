@@ -1,7 +1,8 @@
 import numpy as np
 import networkx as nx
-from wmetapath2vec.random_walk import nx_random_walk, weighted_random_walk, match_metapath
+from weighted_metapath2vec.random_walk import nx_random_walk, weighted_random_walk, match_metapath
 
+import logging
 
 def test_match_metapath():
 
@@ -21,7 +22,7 @@ def test_match_metapath():
     assert match_metapath(G, [0, 2, 1, 4, 1], metapaths)
 
 
-def test_weighted_random_walk():
+def test_weighted_random_walk(walk_length=3, n_walks=10):
 
     weights = np.random.rand(5, 5)
     np.fill_diagonal(weights, 0)
@@ -39,10 +40,9 @@ def test_weighted_random_walk():
         ['construct', 'task', 'construct'],
     ]
 
-    walks = weighted_random_walk(G, 3, 10)
-    print(walks)
-    assert len(walks) == 10 * len(G.nodes)
-    # G.edges.data()
+    walks = weighted_random_walk(G, walk_length, n_walks)
+
+    assert len(walks) <= n_walks * len(G.nodes)
 
 
 def test_nx_random_walk():

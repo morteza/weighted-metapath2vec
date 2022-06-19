@@ -1,4 +1,4 @@
-from wmetapath2vec.random_walk import weighted_random_walk
+from weighted_metapath2vec.random_walk import weighted_random_walk
 
 from sklearn.base import BaseEstimator, TransformerMixin
 

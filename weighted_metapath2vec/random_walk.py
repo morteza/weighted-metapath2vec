@@ -71,7 +71,7 @@ def weighted_random_walk(graph: nx.Graph,
         current_node = np.random.choice(neighbors, p=weights)
         walk.append(current_node)
 
-      if (metapaths is not None) and match_metapath(graph, walk, metapaths):
+      if (metapaths is None) or match_metapath(graph, walk, metapaths):
         node_walks.append(walk)
 
     walks.extend(node_walks)

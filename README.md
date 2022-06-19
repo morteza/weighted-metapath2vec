@@ -1,20 +1,23 @@
-# Weighted Metapath2vec
+# Weighted-Metapath2Vec
 
-Weighted is a Python package to embed heterogenous graph nodes using a weighted alternative of Metapath2vec technique. The embedding can be used for downstream machine learning tasks.
+**Weighted-Metapath2Vec** is a Python package to embed heterogeneous graphs.
+The algorithm uses a weighted alternative to Metapath2vec to compute the embeddings.
+The embeddings can be used for downstream machine learning.
+
 
 [![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white)](https://github.com/pre-commit/pre-commit)
 
 
 ## Installation
 
-```
-pip install wmetapath2vec
+```bash
+pip install weighted-metapath2vec
 ```
 
 ## Usage
 
 ```python
-from wmetapath2vec import WeightedMetapath2VecModel
+from weighted_metapath2vec import WeightedMetapath2VecModel
 
 ...  # Load a networkx graph as G
 
@@ -33,3 +36,11 @@ node_embeddings = model.fit_transform()
 
 ...  # downstream task
 ```
+
+## Contributing
+
+Use GitHub to fork and submit pull requests.
+
+## License
+
+MIT License. See the [LICENSE](LICENSE) file.

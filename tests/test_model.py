@@ -1,7 +1,7 @@
 import numpy as np
 import networkx as nx
 
-from wmetapath2vec.model import WeightedMetapath2VecModel
+from weighted_metapath2vec.model import WeightedMetapath2VecModel
 
 
 def test_wmetapath2vec_model(embedding_dim=128):
