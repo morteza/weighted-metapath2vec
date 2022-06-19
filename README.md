@@ -1,7 +1,7 @@
 # Weighted-Metapath2Vec
 
-**Weighted-Metapath2Vec** is a Python package to embed heterogeneous graphs.
-The algorithm uses a weighted alternative to Metapath2vec to compute the embeddings.
+**Weighted-Metapath2Vec** is a Python package for embedding heterogeneous graphs.
+It uses a weighted variant of [metapath2vec](https://ericdongyx.github.io/metapath2vec/m2v.html) to compute the node embeddings.
 The embeddings can be used for downstream machine learning.
 
 
