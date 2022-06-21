@@ -43,8 +43,7 @@ Use GitHub to fork and submit pull requests.
 
 ## Acknowledgements
 
-This project is supported by the Luxembourg National Research Fund (ATTRACT/2016/ID/11242114/DIGILEARN).
-
+This project is supported by the Luxembourg National Research Fund (ATTRACT/2016/ID/11242114/DIGILEARN and INTER Mobility/2017-2/ID/11765868/ULALA).
 
 
 ## License
