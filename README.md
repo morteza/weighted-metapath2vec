@@ -41,6 +41,12 @@ node_embeddings = model.fit_transform()
 
 Use GitHub to fork and submit pull requests.
 
+## Acknowledgements
+
+This project is supported by the Luxembourg National Research Fund (ATTRACT/2016/ID/11242114/DIGILEARN).
+
+
+
 ## License
 
 MIT License. See the [LICENSE](LICENSE) file.
