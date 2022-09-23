@@ -42,10 +42,25 @@ node_embeddings = model.fit_transform()
 
 Use GitHub to fork and submit pull requests.
 
+## Citation
+
+Please cite this code as follows (BibTeX):
+
+```bibtex
+@software{Weighted_Metapath2Vec,
+        author = {Ansarinia, Morteza and Cardoso-Leite, Pedro},
+        doi = {10.5281/zenodo.7096229},
+        month = {6},
+        title = {{Weighted Metapath2Vec Graph Embedding}},
+        url = {https://github.com/morteza/weighted-metapath2vec},
+        version = {v0.1.4},
+        year = {2022}
+}
+```
+
 ## Acknowledgements
 
 This project is supported by the Luxembourg National Research Fund (ATTRACT/2016/ID/11242114/DIGILEARN and INTER Mobility/2017-2/ID/11765868/ULALA).
-
 
 ## License
 
