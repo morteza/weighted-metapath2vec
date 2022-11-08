@@ -20,7 +20,7 @@ pip install weighted-metapath2vec
 ```python
 from weighted_metapath2vec import WeightedMetapath2VecModel
 
-...  # Load a networkx graph as G
+G = ...  # Load a networkx graph as G
 
 metapaths = [
     ['Article', 'Author', 'Article'],
